@@ -13,6 +13,8 @@ function Uninstall-Apps {
 
         Get-ChildItem $Path -Filter $App -Recurse | % {$_.FullName}
 
+        # Arguments depend on the Program
+        # Common Argument is /S
         Start-Process $Path -ArgumentList "uninstall /q" -Wait
         
     }
